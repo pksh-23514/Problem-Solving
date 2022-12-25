@@ -23,8 +23,10 @@ int main()
 	/* The loop shall run from 2 to n for calculating the Factorial of 'n'. {Eg. => n! = 1 (from 'str') * 2 * 3 *...* (n-1) * n} */
 	for (int i = 2; i <= n; i++)
 	{
-		/* The loop shall run to multiply the existing value stored in 'str' with the current Number to be multiplied in the Factorial. The loop termination will be governed by 'limit'.
-		   Eg. => Suppose 'str' has "24" (limit = 2) and 'i' is 5. So, the factorial value will be updated by multiplying each digit in 'str' with 'i' and the loop shall run '2' times.
+		/* The loop shall run to multiply the existing value stored in 'str' with the current Number to be multiplied in the Factorial.
+		   The loop termination will be governed by 'limit'.
+		   Eg. => Suppose 'str' has "24" (limit = 2) and 'i' is 5.
+		   So, the factorial value will be updated by multiplying each digit in 'str' with 'i'. The loop shall run '2' times.
 		 */
 		for (int j = 0; j < limit; j++)
 		{
@@ -33,8 +35,10 @@ int main()
 			rem = prod / 10;						//To update the Remainder left after storing the digit obtained from the multiplication.
 		}
 
-		/* If the Overflow of Digits take place due to Multiplication, the Overflown digit shall be stored at the Higher index of 'str' and the value of 'limit' shall be updated accordingly.
-		   Eg. => Suppose 'str' has "24" (limit = 2) and 'i' is 5. Product to be stored will be 120 but 'limit' is 2. So, the remaining '1' in 'rem' shall be stored separately.
+		/* If the Overflow of Digits take place due to Multiplication, the Overflown digit shall be stored at the Higher index of 'str'.
+		   The value of 'limit' shall be updated accordingly.
+		   Eg. => Suppose 'str' has "24" (limit = 2) and 'i' is 5.
+		   Product to be stored will be 120 but 'limit' is 2. So, the remaining '1' in 'rem' shall be stored separately.
 		 */
 		while (rem > 0)
 		{
