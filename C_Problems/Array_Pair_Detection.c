@@ -24,7 +24,7 @@ int main()
 	int res = 0;
 	for (int i = 0; i < n; i++)
 	{
-		res = res ^ arr [i];
+		res = res ^ arr [i];	//The XOR-operation gives 0 in Even times and Number in Odd times occurence.
 	}
 
 	if (res != 0)

@@ -2,8 +2,8 @@
 Name         : Prabhat Kiran
 Date         : 22nd December 2022
 Description  : WAP to Move all the instances of a Number in the Array to the Start of the Array.
-Sample Input : 2 1 2 3 4 2 2 2
-Sample Output: 2 2 2 2 2 4 3 1
+Sample Input : 2 1 2 3 4 2 2 2 2 and "2"
+Sample Output: 2 2 2 2 2 2 4 3 1
 */
 
 #include <stdio.h>

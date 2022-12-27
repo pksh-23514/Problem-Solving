@@ -2,8 +2,8 @@
 Name         : Prabhat Kiran
 Date         : 22nd December 2022
 Description  : WAP to Move all the instances of a Number in the Array to the End of the Array.
-Sample Input : 2 1 2 2 2 3 4 2 and "2"
-Sample Output: 4 1 3 2 2 2 2 2
+Sample Input : 2 1 2 2 2 3 4 2 2 and "2"
+Sample Output: 4 1 3 2 2 2 2 2 2
 */
 
 #include <stdio.h>
