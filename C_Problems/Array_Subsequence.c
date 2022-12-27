@@ -28,15 +28,16 @@ int main()
 		scanf ("%d", &seq [i]);
 
 	int array_ptr = 0, seq_ptr = 0;
-	while ((array_ptr < array_ind) && (seq_ptr < seq_ind))		//The loop shall run till any one of the Array terminates
+	while ((array_ptr < array_ind) && (seq_ptr < seq_ind))	//The loop shall run till any one of the Array terminates
 	{
-		if (array [array_ptr] == seq [seq_ptr])					//If the Main Sequence and Sub-Sequence element matches, move the 'seq_ptr' to the next element of the Sub-Sequence.
+		//If the Main Sequence and Sub-Sequence element matches, move the 'seq_ptr' to the next element of the Sub-Sequence.
+		if (array [array_ptr] == seq [seq_ptr])
 			seq_ptr += 1;
 
-		array_ptr += 1;											//Increment the 'array_ptr' irrespective of any matching condition.
+		array_ptr += 1;		//Increment the 'array_ptr' irrespective of any matching condition.
 	}
 
-	if (seq_ptr == seq_ind)										//If the 'seq_ptr' points to the End of the Sub-Sequence Array; it is a Sub-Sequence of the Main Sequence Array.
+	if (seq_ptr == seq_ind)		//If the 'seq_ptr' points to the End of the Sub-Sequence Array; it is a Sub-Sequence of the Main Sequence Array.
 		printf ("True\n");
 	else
 		printf ("False\n");

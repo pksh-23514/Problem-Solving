@@ -52,12 +52,12 @@ int main()
 	   The Array shall be sorted first before applying this technique to increase the 'change' in a monotonic way.
 	 */
 	int change = 0;		//To store the Possible range of Money that can be created: 1 to 'change + 1'.
-	int i = 0;			//To navigate the given Array.
+	int i = 0;		//To navigate the given Array.
 	while (i < n)
 	{
-		if (arr [i] > (change + 1))		//If any given value of the Array is greater than the value of 'change + 1'; the 'change + 1' value is not possible to create.
+		if (arr [i] > (change + 1))	//If any given value of the Array is greater than the value of 'change + 1'; the 'change + 1' value is not possible to create.
 			break;
-		else			//Otherwise, add the current Element to the existing 'change'. This guarantees that until 'change', the money can be created with the Array.
+		else	//Otherwise, add the current Element to the existing 'change'. This guarantees that until 'change', the money can be created with the Array.
 		{
 			change += arr [i];
 			i += 1;

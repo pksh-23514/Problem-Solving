@@ -45,32 +45,32 @@ void quick_sort (int a [], int first, int last)
 		return;
 
 	int pi = partition (a, first, last);	//To find the Partition Index.
-	quick_sort (a, first, pi);				//Sort the Left Sub-Array from the Partition Index.
-	quick_sort (a, (pi + 1), last);			//Sort the Right Sub-Array from the Partition Index.
+	quick_sort (a, first, pi);		//Sort the Left Sub-Array from the Partition Index.
+	quick_sort (a, (pi + 1), last);		//Sort the Right Sub-Array from the Partition Index.
 }
 
 int partition (int a [], int low, int high)
 {
-	int pivot = a [low];					//Update the Pivot element as the First Array Element.
-	int i = low - 1;						//The indicator to traverse the Array from the Lower end.
-	int j = high + 1;						//The indicator to traverse the Array from the Higher end.
+	int pivot = a [low];	//Update the Pivot element as the First Array Element.
+	int i = low - 1;	//The indicator to traverse the Array from the Lower end.
+	int j = high + 1;	//The indicator to traverse the Array from the Higher end.
 
 	while (1)
 	{
 		do
 		{
 			i += 1;
-		} while (a [i] < pivot);			//Find the Array Element greater than the Pivot and on the Left side of the Pivot.
+		} while (a [i] < pivot);	//Find the Array Element greater than the Pivot and on the Left side of the Pivot.
 
 		do
 		{
 			j -= 1;
-		} while (a [j] > pivot);			//Find the Array Element smaller than the Pivot and on the Right side of the Pivot.
+		} while (a [j] > pivot);	//Find the Array Element smaller than the Pivot and on the Right side of the Pivot.
 
-		if (i >= j)							//If the Left indicator surpasses the Right indicator, return the 'j' as the Partition index.
+		if (i >= j)			//If the Left indicator surpasses the Right indicator, return the 'j' as the Partition index.
 			return j;
 
-		a [i] = a [i] ^ a [j];				//Otherwise, Swap the Array Elements found at the indices 'i' and 'j'.
+		a [i] = a [i] ^ a [j];		//Otherwise, Swap the Array Elements found at the indices 'i' and 'j'.
 		a [j] = a [i] ^ a [j];
 		a [i] = a [i] ^ a [j];
 	}

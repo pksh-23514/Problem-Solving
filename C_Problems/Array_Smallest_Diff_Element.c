@@ -59,27 +59,27 @@ int main()
 	{
 		/* Find the Absolute difference between the Array elements at the positions 'p1' and 'p2' */
 		currDiff = (a1 [ptr1] > a2 [ptr2]) ? (a1 [ptr1] - a2 [ptr2]) : (a2 [ptr2] - a1 [ptr1]);
-
-		if (currDiff < minDiff)			//If the Current Element's difference is found to be less than the Minimum difference found until now, store the Pair of the Array Elements.
+		/* If the Current Element's difference is found to be less than the Minimum difference found until now, store the Pair of the Array Elements */
+		if (currDiff < minDiff)			
 		{
-			minDiff = currDiff;			//To update the Minimum difference.
+			minDiff = currDiff;		//To update the Minimum difference.
 			pair [0] = a1 [ptr1];		//Update the Pair with the First Array's current element.
 			pair [1] = a2 [ptr2];		//Update the Paur with the Second Array's current element.
 		}
 
-		/* Since both the Arrays are Sorted, the Current difference will always be greater than the difference between the elements with the updated Index (either 'ptr1' or 'ptr2').
+		/* Since both the Arrays are Sorted, the Current difference will always be greater than the difference between the elements with the updated Index.
 		   Eg. => a1[ptr1] = 5, a1[ptr1+1] = 9, a2[ptr2] = 20 and currDiff = (20-5) = 15. So, minDiff = 15.
 		   Then => (a1[ptr1] < a2[ptr2]; so ptr1++ is done and ptr2 is kept same. Now, the currDiff = (20-9) = 11 which is smaller than the minDiff.
 		   This shall continue for 'ptr1' till a1[ptr1] becomes greater than a2[ptr2]. Then, again 'ptr2' is incremented keeping 'ptr1' as same with the same logic.
 		 */
 		if (a1 [ptr1] < a2 [ptr2])		//If the First Array's current element is smaller than the Second Array's current element; update the 'ptr1'.
 		{
-			ptr1 += 1;					//To check for the Difference between the Second Array's current element and First Array's next element.
+			ptr1 += 1;	//To check for the Difference between the Second Array's current element and First Array's next element.
 			continue;
 		}
 		if (a2 [ptr2] <= a1 [ptr1])		//If the First Array's current element is larger than the Second Array's current element; update the 'ptr2'.
 		{
-			ptr2 += 1;					//To check for the Difference between the First Array's current element and Second Array's next element.
+			ptr2 += 1;	//To check for the Difference between the First Array's current element and Second Array's next element.
 			continue;
 		}
 	}

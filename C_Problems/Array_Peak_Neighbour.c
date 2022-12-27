@@ -25,20 +25,22 @@ int main()
 		scanf ("%d", &arr [i]);
 	}
 
-	int peak = arr [0];											//Assume, the Peak element is found at the First Position of the Array.
+	int peak = arr [0];		//Assume, the Peak element is found at the First Position of the Array.
 
-	for (int i = 1; i < n; i++)									//The loop shall run till the Last Position element is checked.
+	for (int i = 1; i < n; i++)	//The loop shall run till the Last Position element is checked.
 	{
-		if (arr [i] > arr [i - 1])								//If the Current Position element is greater than the Previous Position element.
+		if (arr [i] > arr [i - 1])	//If the Current Position element is greater than the Previous Position element.
 		{
-			if (((i + 1) != n) && (arr [i] > arr [i + 1]))		//If the Current Position is not equal to the Last Position and Current Position element is greater than Next Position element.
+			/* If the Current Position is not equal to the Last Position and Current Position element is greater than Next Position element */
+			if (((i + 1) != n) && (arr [i] > arr [i + 1]))
 			{
-				peak = arr [i];									//Update the Current Position element as the Peak element.
+				peak = arr [i];		//Update the Current Position element as the Peak element.
 				break;
 			}
-			else if ((i + 1) == n)								//Special Case: If the Current Position is equal to the Last Position, there cannot be any comparision with the Next Position element.
+			/* Special Case: If the Current Position is equal to the Last Position, there cannot be any comparision with the Next Position element */
+			else if ((i + 1) == n)
 			{
-				peak = arr [i];									//Update the Last Position element as the Peak element.
+				peak = arr [i];		//Update the Last Position element as the Peak element.
 			}
 		}
 	}

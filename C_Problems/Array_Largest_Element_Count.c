@@ -6,7 +6,7 @@ int find_Max_count (int* a, int n)
 
 	for (int i = 1; i < n; i++)		//The loop shall run till the end of the Array.
 	{
-		if (a [i] > max)			//If the Array element is greater than the 'max'; update the 'max' to Array element and reset the 'count' to 1.
+		if (a [i] > max)		//If the Array element is greater than the 'max'; update the 'max' to Array element and reset the 'count' to 1.
 		{
 			max = a [i];
 			count = 1;
@@ -17,7 +17,7 @@ int find_Max_count (int* a, int n)
 		}
 	}
 
-	return count;					//Return the number of Ocuurences of the Maximum value.
+	return count;				//Return the number of Ocuurences of the Maximum value.
 }
 
 int main()

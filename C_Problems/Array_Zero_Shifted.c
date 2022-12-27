@@ -20,7 +20,8 @@ int main()
 	{
 		for (int j = 0; j < (n - i - 1); j++)
 		{
-			if (a [j + 1] == 0)		//Bubble Sort Logic to push the '0' to the previous position i.e from 'j+1' to 'j'. Lastly, all 0's will reach to positions from beginning.
+			//Bubble Sort Logic to push the '0' to the previous position i.e from 'j+1' to 'j'. Lastly, all 0's will reach to positions from beginning.
+			if (a [j + 1] == 0)
 			{
 				a [j] = a [j] ^ a [j + 1];
 				a [j + 1] = a [j] ^ a [j + 1];
