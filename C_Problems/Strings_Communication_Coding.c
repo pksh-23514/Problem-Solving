@@ -50,19 +50,19 @@ char* encoder (char str [])
 
 	for (i = 0; i < len; i++)
 	{
-		int diff = str [i] - 'A' + 1;					//To find the current character's position.
-		if (diff % 2 == 1)								//If the 'diff' value is Odd, add the mirror reflection of the current character.
+		int diff = str [i] - 'A' + 1;	//To find the current character's position.
+		if (diff % 2 == 1)		//If the 'diff' value is Odd, add the mirror reflection of the current character.
 		{
 			s [j++] = c [26 - diff];
 		}
-		else											//Otherwise, add the current character as well as the mirror reflection of the current character.
+		else	//Otherwise, add the current character as well as the mirror reflection of the current character.
 		{
 			s [j++] = str [i];
 			s [j++] = c [26 - diff];
 		}
 	}
 
-	s [j] = '\0';										//Null Termination.
+	s [j] = '\0';	//Null Termination.
 
 	return s;
 }
@@ -80,19 +80,23 @@ char* decoder (char str [])
 	int len = strlen (str);
 	for (i = 0; i < len; i++)
 	{
-		int diff = str [i] - 'A' + 1;					//In the Encoded string, the 'diff' for any character will always come as an Even number only. So, the next character shall be checked.
-		if ((str [i + 1] == c [26 - diff]))				//If the next character is a mirror reflection of the current character; the current character shall be copied directly.
+		//In the Encoded string, the 'diff' for any character will always come as an Even number only. So, the next character shall be checked.
+		int diff = str [i] - 'A' + 1;
+
+		//If the next character is a mirror reflection of the current character; the current character shall be copied directly.
+		if ((str [i + 1] == c [26 - diff]))
 		{
 			s [j++] = str [i];
-			i++;										//The next character shall be ignored as while encoding, we added 2 characters for the Even positioned Letter.
+			i++;	//The next character shall be ignored as while encoding, we added 2 characters for the Even positioned Letter.
 		}
 		else
 		{
-			s [j++] = c [26 - diff];					//Otherwise, the mirror image of the current character shall be copied as while encoding, it was an Odd positioned Letter.
+			//Otherwise, the mirror image of the current character shall be copied as while encoding, it was an Odd positioned Letter.
+			s [j++] = c [26 - diff];
 		}
 	}
 	
-	s [j] = '\0';										//Null Termination.
+	s [j] = '\0';	//Null Termination.
 	
 	return s;
 }

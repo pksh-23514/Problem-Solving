@@ -30,9 +30,9 @@ int main()
 		 */
 		for (int j = 0; j < limit; j++)
 		{
-			prod = ((str [j] - '0') * i) + rem;		//To multiply the digit at jth index of 'str' with i and add the remainder (if any) to obtain the final Product.
-			str [j] = (prod % 10) + '0';			//To update the jth index of 'str' with the new value obtained from the multiplication.
-			rem = prod / 10;						//To update the Remainder left after storing the digit obtained from the multiplication.
+			prod = ((str [j] - '0') * i) + rem;	//To multiply the digit at jth index of 'str' with i and add the remainder (if any) to obtain final Product.
+			str [j] = (prod % 10) + '0';		//To update the jth index of 'str' with the new value obtained from the multiplication.
+			rem = prod / 10;			//To update the Remainder left after storing the digit obtained from the multiplication.
 		}
 
 		/* If the Overflow of Digits take place due to Multiplication, the Overflown digit shall be stored at the Higher index of 'str'.

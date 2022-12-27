@@ -24,7 +24,7 @@ int main()
 	printf ("Enter the Number to be converted in the Word form: ");
 	scanf ("%d", &num);
 
-	if (num < 0)										//Error Handling.
+	if (num < 0)	//Error Handling.
 	{
 		printf ("The Number shall be a Positive Number.\n");
 		return 0;
@@ -32,7 +32,7 @@ int main()
 
 	int orig = num, count = 0;
 
-	while (orig != 0)									//To Count how many Digits are present in the Number.
+	while (orig != 0)		//To Count how many Digits are present in the Number.
 	{
 		count += 1;
 		orig = orig / 10;
@@ -40,19 +40,19 @@ int main()
 
 	printf ("The Number in Word form is: ");
 
-	if ((count == 0) || (count == 1))					//If the Number is Zero or contains One Digit.
+	if ((count == 0) || (count == 1))	//If the Number is Zero or contains One Digit.
 	{	
 		one_digit (num);
 	}
-	else if (count == 2)								//If the Number contains Two digits.
+	else if (count == 2)			//If the Number contains Two digits.
 	{
 		two_digit (num);
 	}
-	else if (count == 3)								//If the Number contains Three digits.
+	else if (count == 3)			//If the Number contains Three digits.
 	{
 		three_digit (num);
 	}
-	else if (count == 4)								//If the Number contains Four digits.
+	else if (count == 4)			//If the Number contains Four digits.
 	{
 		four_digit (num);
 	}
@@ -63,68 +63,70 @@ int main()
 
 void one_digit (int num)
 {
-	printf ("%s", zero [num]);							//The Word displaying the Units place. The array 'zero' is mapped in such a way that the index is 'num'.
+	printf ("%s", zero [num]);	//The Word displaying the Units place. The array 'zero' is mapped in such a way that the index is 'num'.
 }
 
 void two_digit (int num)
 {
-	if ((num > 9) && (num < 20))						//If the value of 'num' lies in the range of 10 to 19, only one Word shall be printed.
+	if ((num > 9) && (num < 20))			//If the value of 'num' lies in the range of 10 to 19, only one Word shall be printed.
 	{
-		printf ("%s", tens [(num % 10)]);				//The array 'tens' is mapped in such a way that the index is 'num % 10'.
+		printf ("%s", tens [(num % 10)]);	//The array 'tens' is mapped in such a way that the index is 'num % 10'.
 	}
-	else												//If the value of 'num' is greater than 19, either one or two Words shall be printed.
+	else	//If the value of 'num' is greater than 19, either one or two Words shall be printed.
 	{
-		printf ("%s", spec [(num / 10) - 2]);			//The Word displaying the Tens place. The array 'spec' is mapped in such a way that the index is '(num / 10) - 2'.
+		printf ("%s", spec [(num / 10) - 2]);	//The Word displaying the Tens place. The array 'spec' is mapped in such a way that the index is '(num / 10) - 2'.
 
-		if ((num % 10) != 0)							//If the value of 'num' is not divisible by 10 completely, one more Word shall be printed.
+		if ((num % 10) != 0)			//If the value of 'num' is not divisible by 10 completely, one more Word shall be printed.
 		{
 			printf (" ");
-			one_digit (num % 10);						//The Word displaying the Units place.
+			one_digit (num % 10);		//The Word displaying the Units place.
 		}
 	}
 }
 
 void three_digit (int num)
 {
-	printf ("%s %s", zero [(num / 100)], spec [8]);		//The Word displaying the Hundreth place. The array 'zero' is mapped in such a way that the index is 'num / 100'.
+	//The Word displaying the Hundreth place. The array 'zero' is mapped in such a way that the index is 'num / 100'.
+	printf ("%s %s", zero [(num / 100)], spec [8]);
 
-	if ((num % 100) != 0)								//If the value of 'num' is not divisible by 100 completely, more Words shall be printed.
+	if ((num % 100) != 0)				//If the value of 'num' is not divisible by 100 completely, more Words shall be printed.
 	{
 		int rem = num % 100;
-		if ((rem > 0) && (rem < 10))					//If the value of 'num' lies in the range of 1 to 9, only one Word shall be printed.
+		if ((rem > 0) && (rem < 10))		//If the value of 'num' lies in the range of 1 to 9, only one Word shall be printed.
 		{
 			printf (" ");
-			one_digit (rem);							//The Word displaying the Units place.
+			one_digit (rem);		//The Word displaying the Units place.
 		}
-		else											//Otherwise, 2 Words shall be printed.
+		else					//Otherwise, 2 Words shall be printed.
 		{
 			printf (" ");
-			two_digit (num % 100);						//The Word displaying the Tens place.
+			two_digit (num % 100);		//The Word displaying the Tens place.
 		}
 	}
 }
 
 void four_digit (int num)
 {
-	printf ("%s %s", zero [(num / 1000)], spec [9]);	//The Word displaying the Thousandth place. The array 'zero' is mapped in such a way that the index is 'num / 1000'.
+	//The Word displaying the Thousandth place. The array 'zero' is mapped in such a way that the index is 'num / 1000'.
+	printf ("%s %s", zero [(num / 1000)], spec [9]);
 
-	if ((num % 1000) != 0)								//If the value of 'num' is not divisible by 1000 completely, more Words shall be printed.
+	if ((num % 1000) != 0)		//If the value of 'num' is not divisible by 1000 completely, more Words shall be printed.
 	{
 		int rem = num % 1000;
-		if ((rem > 0) && (rem < 10))					//If the value of 'num' lies in the range of 1 to 9, only one Word shall be printed.
+		if ((rem > 0) && (rem < 10))		//If the value of 'num' lies in the range of 1 to 9, only one Word shall be printed.
 		{
 			printf (" ");
-			one_digit (rem);							//The Word displaying the Units place.
+			one_digit (rem);		//The Word displaying the Units place.
 		}
-		else if ((rem > 9) && (rem < 100))				//If the value of 'num' lies in the range of 10 to 99, one or two Words shall be printed.
+		else if ((rem > 9) && (rem < 100))	//If the value of 'num' lies in the range of 10 to 99, one or two Words shall be printed.
 		{
 			printf (" ");
-			two_digit (rem);							//The Word displaying the Tens place.
+			two_digit (rem);		//The Word displaying the Tens place.
 		}
-		else											//Otherwise, 3 Words shall be printed.
+		else					//Otherwise, 3 Words shall be printed.
 		{
 			printf (" ");
-			three_digit (rem);							//The Word displaying the Hundredth place.
+			three_digit (rem);		//The Word displaying the Hundredth place.
 		}
 	}
 }
