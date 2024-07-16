@@ -1,7 +1,7 @@
 # Description  : Split the String " " (delimiter) and Join the same using "-" (delimiter).
 # Sample Input : this is a string
 # Sample Output: this-is-a-string
-# *********************************
+# *****************************************************************************************************************************************************************************
 
 def split_and_join (string):
     
