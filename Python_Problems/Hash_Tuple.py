@@ -1,7 +1,7 @@
 # Description  : Given an integer 'n' and 'n' space-separated integers, create a Tuple of those integers and compute the result of "hash()".
 # Sample Input : 2
 #                1 2
-# Sample Output: 3713081631934410656
+# Sample Output: -3550055125485641917
 # *****************************************************************************************************************************************************************************
 
 if (__name__ == "__main__"):
